@@ -5,7 +5,7 @@ export default function getFullResponseFromAPI(success) {
       body: 'Success',
     };
 
-    if(success === true) {
+    if (success === true) {
       resolve(obj);
     }
     else {
