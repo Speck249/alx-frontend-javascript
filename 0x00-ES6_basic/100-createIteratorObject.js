@@ -9,6 +9,9 @@ export default function createIteratorObject(report) {
   let currentIndex = 0;
 
   const iterator = {
+    [Symbol.iterator]() {
+      return this;
+    },
     next() {
       if (currentIndex < employees.length) {
         return {
