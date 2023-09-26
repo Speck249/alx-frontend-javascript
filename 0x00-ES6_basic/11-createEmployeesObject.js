@@ -1,7 +1,7 @@
 export default function createEmployeesObject(departmentName, employees) {
-  const newDict = {
+  const employeesList = {
     [departmentName]: employees,
   };
 
-  return newDict;
+  return employeesList;
 }
