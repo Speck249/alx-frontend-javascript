@@ -1,7 +1,3 @@
-package.json
 package-lock.json
-.eslintrc.js
-tsconfig.json
-webpack.config.js
 node_modules/
 dist/
