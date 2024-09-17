@@ -1,54 +1,57 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    } else {
+    if (typeof(name) === "string") {
       this._name = name;
+    } else {
+      throw new TypeError(`Name must be a string`);
     }
 
-    if (typeof length !== 'number') {
-      throw new TypeError('Length must be a number');
-    } else {
+    if (typeof(length) === "number") {
       this._length = length;
-    }
-
-    if (!Array.isArray(students) || students.some((element) => typeof element !== 'string')) {
-      throw new TypeError('Students must be an array of strings');
     } else {
-      this._students = students;
+      throw new TypeError(`Length must be a number`);
     }
-  }
 
-  set name(name) {
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
+    if (Array.isArray(students) && students.every((student) => typeof(student) === "string")) {
+      this._students = students;
+    } else {
+      throw new TypeError(`Students must be an array of string`);
     }
-    this._name = name;
   }
 
   get name() {
     return this._name;
   }
 
-  set length(length) {
-    if (typeof length !== 'number') {
-      throw new TypeError('Length must be a number');
+  set name(value) {
+    if (typeof(value) === "string") {
+      this._name = value;
+    } else {
+      throw new TypeError(`Name must be a string`);
     }
-    this._length = length;
   }
 
   get length() {
     return this._length;
   }
 
-  set students(students) {
-    if (!Array.isArray(students) || students.some((element) => typeof element !== 'string')) {
-      throw new TypeError('Students must be an array of strings');
+  set length(value) {
+    if (typeof(value) === "number") {
+      this._length = value;
+    } else {
+      throw new TypeError(`Length must be a number`);
     }
-    this._students = students;
   }
 
   get students() {
     return this._students;
+  }
+
+  set students(value) {
+    if (Array.isArray(students) && students.every((student) => typeof(student) === "string")) {
+      this._students = students;
+    } else {
+      throw new TypeError(`Students must be an array of string`);
+    }
   }
 }
